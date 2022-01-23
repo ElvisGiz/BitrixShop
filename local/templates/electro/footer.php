@@ -126,13 +126,7 @@
 		</footer>
 		<!-- /FOOTER -->
 
-		<!-- jQuery Plugins -->
-		<script src="<?=SITE_TEMPLATE_PATH?> . js/jquery.min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?> . js/bootstrap.min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?> . js/slick.min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?> . js/nouislider.min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?> . js/jquery.zoom.min.js"></script>
-		<script src="<?=SITE_TEMPLATE_PATH?> . js/main.js"></script>
+
 
 	</body>
 </html>

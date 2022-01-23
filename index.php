@@ -1,162 +1,238 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Интернет-магазин \"Электро\"");
-//?>
-<?//if (IsModuleInstalled("advertising")):?>
-<!--	<div class="mb-5">-->
-<!--		--><?//$APPLICATION->IncludeComponent(
-//			"bitrix:advertising.banner",
-//			"bootstrap_v4",
-//			array(
-//				"COMPONENT_TEMPLATE" => "bootstrap_v4",
-//				"TYPE" => "MAIN",
-//				"NOINDEX" => "Y",
-//				"QUANTITY" => "3",
-//				"BS_EFFECT" => "fade",
-//				"BS_CYCLING" => "N",
-//				"BS_WRAP" => "Y",
-//				"BS_PAUSE" => "Y",
-//				"BS_KEYBOARD" => "Y",
-//				"BS_ARROW_NAV" => "Y",
-//				"BS_BULLET_NAV" => "Y",
-//				"BS_HIDE_FOR_TABLETS" => "N",
-//				"BS_HIDE_FOR_PHONES" => "Y",
-//				"CACHE_TYPE" => "A",
-//				"CACHE_TIME" => "36000000",
-//			),
-//			false
-//		);?>
-<!--	</div>-->
-<?//endif?>
-<!---->
-<?//
-//global $trendFilter;
-//$trendFilter = array('PROPERTY_TREND' => '4');
-//?>
-<!--<h2>Тренды сезона</h2>-->
-<?//$APPLICATION->IncludeComponent(
-//	"bitrix:catalog.section",
-//	"bootstrap_v4",
-//	array(
-//		"IBLOCK_TYPE_ID" => "catalog",
-//		"IBLOCK_ID" => "2",
-//		"BASKET_URL" => "/personal/cart/",
-//		"COMPONENT_TEMPLATE" => "",
-//		"IBLOCK_TYPE" => "catalog",
-//		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-//		"SECTION_CODE" => "",
-//		"SECTION_USER_FIELDS" => array(
-//			0 => "",
-//			1 => "",
-//		),
-//		"ELEMENT_SORT_FIELD" => "sort",
-//		"ELEMENT_SORT_ORDER" => "desc",
-//		"ELEMENT_SORT_FIELD2" => "id",
-//		"ELEMENT_SORT_ORDER2" => "desc",
-//		"FILTER_NAME" => "trendFilter",
-//		"INCLUDE_SUBSECTIONS" => "Y",
-//		"SHOW_ALL_WO_SECTION" => "Y",
-//		"HIDE_NOT_AVAILABLE" => "N",
-//		"PAGE_ELEMENT_COUNT" => "12",
-//		"LINE_ELEMENT_COUNT" => "3",
-//		"PROPERTY_CODE" => array(
-//			0 => "NEWPRODUCT",
-//			1 => "",
-//		),
-//		"OFFERS_FIELD_CODE" => array(
-//			0 => "",
-//			1 => "",
-//		),
-//		"OFFERS_PROPERTY_CODE" => array(
-//			0 => "COLOR_REF",
-//			1 => "SIZES_SHOES",
-//			2 => "SIZES_CLOTHES",
-//			3 => "",
-//		),
-//		"OFFERS_SORT_FIELD" => "sort",
-//		"OFFERS_SORT_ORDER" => "desc",
-//		"OFFERS_SORT_FIELD2" => "id",
-//		"OFFERS_SORT_ORDER2" => "desc",
-//		"TEMPLATE_THEME" => "site",
-//		"PRODUCT_DISPLAY_MODE" => "Y",
-//		"ADD_PICT_PROP" => "MORE_PHOTO",
-//		"LABEL_PROP" => array(
-//			0 => "NEWPRODUCT"
-//		),
-//		"OFFER_ADD_PICT_PROP" => "-",
-//		"OFFER_TREE_PROPS" => array(
-//			0 => "COLOR_REF",
-//			1 => "SIZES_SHOES",
-//			2 => "SIZES_CLOTHES",
-//		),
-//		"PRODUCT_SUBSCRIPTION" => "N",
-//		"SHOW_DISCOUNT_PERCENT" => "N",
-//		"SHOW_OLD_PRICE" => "Y",
-//		"SHOW_CLOSE_POPUP" => "N",
-//		"MESS_BTN_BUY" => "Купить",
-//		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-//		"MESS_BTN_SUBSCRIBE" => "Подписаться",
-//		"MESS_BTN_DETAIL" => "Подробнее",
-//		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-//		"SECTION_URL" => "",
-//		"DETAIL_URL" => "",
-//		"SECTION_ID_VARIABLE" => "SECTION_ID",
-//		"SEF_MODE" => "N",
-//		"AJAX_MODE" => "N",
-//		"AJAX_OPTION_JUMP" => "N",
-//		"AJAX_OPTION_STYLE" => "Y",
-//		"AJAX_OPTION_HISTORY" => "N",
-//		"AJAX_OPTION_ADDITIONAL" => "",
-//		"CACHE_TYPE" => "A",
-//		"CACHE_TIME" => "36000000",
-//		"CACHE_GROUPS" => "Y",
-//		"SET_TITLE" => "Y",
-//		"SET_BROWSER_TITLE" => "Y",
-//		"BROWSER_TITLE" => "-",
-//		"SET_META_KEYWORDS" => "Y",
-//		"META_KEYWORDS" => "-",
-//		"SET_META_DESCRIPTION" => "Y",
-//		"META_DESCRIPTION" => "-",
-//		"SET_LAST_MODIFIED" => "N",
-//		"USE_MAIN_ELEMENT_SECTION" => "N",
-//		"ADD_SECTIONS_CHAIN" => "N",
-//		"CACHE_FILTER" => "N",
-//		"ACTION_VARIABLE" => "action",
-//		"PRODUCT_ID_VARIABLE" => "id",
-//		"PRICE_CODE" => array(
-//			0 => "BASE",
-//		),
-//		"USE_PRICE_COUNT" => "N",
-//		"SHOW_PRICE_COUNT" => "1",
-//		"PRICE_VAT_INCLUDE" => "Y",
-//		"CONVERT_CURRENCY" => "N",
-//		"USE_PRODUCT_QUANTITY" => "N",
-//		"PRODUCT_QUANTITY_VARIABLE" => "",
-//		"ADD_PROPERTIES_TO_BASKET" => "Y",
-//		"PRODUCT_PROPS_VARIABLE" => "prop",
-//		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-//		"PRODUCT_PROPERTIES" => array(
-//		),
-//		"OFFERS_CART_PROPERTIES" => array(
-//			0 => "COLOR_REF",
-//			1 => "SIZES_SHOES",
-//			2 => "SIZES_CLOTHES",
-//		),
-//		"ADD_TO_BASKET_ACTION" => "ADD",
-//		"PAGER_TEMPLATE" => "round",
-//		"DISPLAY_TOP_PAGER" => "N",
-//		"DISPLAY_BOTTOM_PAGER" => "Y",
-//		"PAGER_TITLE" => "Товары",
-//		"PAGER_SHOW_ALWAYS" => "N",
-//		"PAGER_DESC_NUMBERING" => "N",
-//		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-//		"PAGER_SHOW_ALL" => "N",
-//		"PAGER_BASE_LINK_ENABLE" => "N",
-//		"SET_STATUS_404" => "N",
-//		"SHOW_404" => "N",
-//		"MESSAGE_404" => "",
-//		"COMPATIBLE_MODE" => "N",
-//	),
-//	false
-//);?>
+?>
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <!-- shop -->
+                <div class="col-md-4 col-xs-6">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="<?=SITE_TEMPLATE_PATH?>./img/shop01.png" alt="">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Ноутбуки<br></h3>
+                            <a href="#" class="cta-btn">Купить <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /shop -->
+
+                <!-- shop -->
+                <div class="col-md-4 col-xs-6">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="<?=SITE_TEMPLATE_PATH?>./img/shop03.png" alt="">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Смартфоны<br></h3>
+                            <a href="#" class="cta-btn">Купить <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /shop -->
+
+                <!-- shop -->
+                <div class="col-md-4 col-xs-6">
+                    <div class="shop">
+                        <div class="shop-img">
+                            <img src="<?=SITE_TEMPLATE_PATH?>./img/shop03.png" alt="">
+                        </div>
+                        <div class="shop-body">
+                            <h3>Аксессуары<br></h3>
+                            <a href="#" class="cta-btn">Купить <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /shop -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">New Products</h3>
+                    </div>
+                </div>
+                <!-- /section title -->
+
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab1" class="tab-pane active">
+                                <div class="products-slick" data-nav="#slick-nav-1">
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="<?=SITE_TEMPLATE_PATH?>./img/product01.png" alt="">
+                                            <div class="product-label">
+                                                <span class="sale">-30%</span>
+                                                <span class="new">NEW</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Category</p>
+                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="<?=SITE_TEMPLATE_PATH?>./img/product02.png" alt="">
+                                            <div class="product-label">
+                                                <span class="new">NEW</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Category</p>
+                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="<?=SITE_TEMPLATE_PATH?>./img/product03.png" alt="">
+                                            <div class="product-label">
+                                                <span class="sale">-30%</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Category</p>
+                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="<?=SITE_TEMPLATE_PATH?>./img/product04.png" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Category</p>
+                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+
+                                    <!-- product -->
+                                    <div class="product">
+                                        <div class="product-img">
+                                            <img src="<?=SITE_TEMPLATE_PATH?>./img/product05.png" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <p class="product-category">Category</p>
+                                            <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                            <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                            <div class="product-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <div class="product-btns">
+                                                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+                                                <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        </div>
+                                    </div>
+                                    <!-- /product -->
+                                </div>
+                                <div id="slick-nav-1" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

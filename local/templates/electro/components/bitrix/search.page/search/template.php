@@ -11,8 +11,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 ?>
-<div class="search-page">
-<form action="" method="get">
+<div class="header-search">
+    <form action="" method="get">
 <?if($arParams["USE_SUGGEST"] === "Y"):
 	if(mb_strlen($arResult["REQUEST"]["~QUERY"]) && is_object($arResult["NAV_RESULT"]))
 	{
@@ -44,7 +44,8 @@
 	<?endforeach?>
 	</select>
 <?endif;?>
-	&nbsp;<input type="submit" value="<?=GetMessage("SEARCH_GO")?>" />
+        <button type="submit" class="search-btn"><?=GetMessage("SEARCH_GO")?></button>
+	&nbsp;
 	<input type="hidden" name="how" value="<?echo $arResult["REQUEST"]["HOW"]=="d"? "d": "r"?>" />
 <?if($arParams["SHOW_WHEN"]):?>
 	<script>
@@ -185,3 +186,14 @@ endif;?>
 	<?ShowNote(GetMessage("SEARCH_NOTHING_TO_FOUND"));?>
 <?endif;?>
 </div>
+
+
+
+
+<!--        <select class="input-select">-->
+<!--            <option value="0">Каталог</option>-->
+<!--            <option value="1">Category 01</option>-->
+<!--            <option value="1">Category 02</option>-->
+<!--        </select>-->
+<!--        <input class="input" placeholder="Что ищите?">-->
+<!--        <button class="search-btn">Поиск</button>-->

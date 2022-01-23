@@ -38,15 +38,16 @@ use Bitrix\Main\Page\Asset;
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery Plugins -->
+    <script src="<?=SITE_TEMPLATE_PATH?> . /js/jquery.min.js"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?> . /js/bootstrap.min.js"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?> . /js/slick.min.js"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?> . /js/nouislider.min.js"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?> . /js/jquery.zoom.min.js"></script>
+    <script src="<?=SITE_TEMPLATE_PATH?> . /js/main.js"></script>
 
-<!--    --><?//Asset::getinstance()->addCss(SITE_TEMPLATE_PATH . "/css/reset.css");?>
-<!--    --><?//Asset::getinstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");?>
-<!--    --><?//Asset::getinstance()->addCss(SITE_TEMPLATE_PATH . "/css/owl.carousel.css");?>
-<!--    --><?//Asset::getinstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.min.js");?>
-<!--    --><?//Asset::getinstance()->addJs(SITE_TEMPLATE_PATH . "/js/owl.carousel.min.js");?>
-<!--    --><?//Asset::getinstance()->addJs(SITE_TEMPLATE_PATH . "/js/scripts.js");?>
-    <link rel="icon" type="image/vnd.microsoft.icon"  href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
-    <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon"  href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
     <?$APPLICATION->ShowHead();?>
 </head>
 <?$APPLICATION->ShowPanel();?>
@@ -68,7 +69,7 @@ use Bitrix\Main\Page\Asset;
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-ruble"></i> РУБ</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Личный кабинет</a></li>
+						<li><a href="/personal"><i class="fa fa-user-o"></i> Личный кабинет</a></li>
 					</ul>
 				</div>
 			</div>
@@ -83,26 +84,56 @@ use Bitrix\Main\Page\Asset;
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
-									<img src="./img/logo.png" alt="">
+								<a href="/" class="logo">
+									<img src="<?=SITE_TEMPLATE_PATH?>./img/logo.png" alt="">
 								</a>
 							</div>
 						</div>
 						<!-- /LOGO -->
 
 						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-									<select class="input-select">
-										<option value="0">Каталог</option>
-										<option value="1">Category 01</option>
-										<option value="1">Category 02</option>
-									</select>
-									<input class="input" placeholder="Что ищите?">
-									<button class="search-btn">Поиск</button>
-								</form>
-							</div>
+                        <div class="col-md-6">
+                        <?$APPLICATION->IncludeComponent(
+	"bitrix:search.page", 
+	"search", 
+	array(
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "N",
+		"DEFAULT_SORT" => "rank",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_TOP_PAGER" => "Y",
+		"FILTER_NAME" => "",
+		"NO_WORD_LOGIC" => "N",
+		"PAGER_SHOW_ALWAYS" => "Y",
+		"PAGER_TEMPLATE" => "",
+		"PAGER_TITLE" => "Результаты поиска",
+		"PAGE_RESULT_COUNT" => "50",
+		"PATH_TO_USER_PROFILE" => "",
+		"RATING_TYPE" => "",
+		"RESTART" => "N",
+		"SHOW_RATING" => "",
+		"SHOW_WHEN" => "N",
+		"SHOW_WHERE" => "Y",
+		"USE_LANGUAGE_GUESS" => "Y",
+		"USE_SUGGEST" => "N",
+		"USE_TITLE_RANK" => "N",
+		"arrFILTER" => array(
+		),
+		"arrWHERE" => array(
+			0 => "iblock_catalog",
+		),
+		"COMPONENT_TEMPLATE" => "search"
+	),
+	false
+);?>
+
+
 						</div>
 						<!-- /SEARCH BAR -->
 
@@ -190,7 +221,7 @@ use Bitrix\Main\Page\Asset;
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">На главную</a></li>
+						<li class="active"><a href="/">На главную</a></li>
 						<li><a href="#">Акции</a></li>
 						<li><a href="#">Каталог</a></li>
 						<li><a href="#">Ноутбуки</a></li>
