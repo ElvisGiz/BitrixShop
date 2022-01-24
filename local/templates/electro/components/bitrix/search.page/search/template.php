@@ -13,6 +13,14 @@
 ?>
 <div class="header-search">
     <form action="" method="get">
+        <?if($arParams["SHOW_WHERE"]):?>
+            &nbsp;<select name="where"  class="input-select">
+                <option value=""><?=GetMessage("SEARCH_ALL")?></option>
+                <?foreach($arResult["DROPDOWN"] as $key=>$value):?>
+                    <option value="<?=$key?>"<?if($arResult["REQUEST"]["WHERE"]==$key) echo " selected"?>><?=$value?></option>
+                <?endforeach?>
+            </select>
+        <?endif;?>
 <?if($arParams["USE_SUGGEST"] === "Y"):
 	if(mb_strlen($arResult["REQUEST"]["~QUERY"]) && is_object($arResult["NAV_RESULT"]))
 	{
@@ -34,16 +42,10 @@
 		$component, array("HIDE_ICONS" => "Y")
 	);?>
 <?else:?>
-	<input type="text" name="q" value="<?=$arResult["REQUEST"]["QUERY"]?>" size="40" />
+	<input type="text" name="q" value="<?=$arResult["REQUEST"]["QUERY"]?>" size="40" class="input" placeholder="Что ищите?">
+
 <?endif;?>
-<?if($arParams["SHOW_WHERE"]):?>
-	&nbsp;<select name="where">
-	<option value=""><?=GetMessage("SEARCH_ALL")?></option>
-	<?foreach($arResult["DROPDOWN"] as $key=>$value):?>
-	<option value="<?=$key?>"<?if($arResult["REQUEST"]["WHERE"]==$key) echo " selected"?>><?=$value?></option>
-	<?endforeach?>
-	</select>
-<?endif;?>
+
         <button type="submit" class="search-btn"><?=GetMessage("SEARCH_GO")?></button>
 	&nbsp;
 	<input type="hidden" name="how" value="<?echo $arResult["REQUEST"]["HOW"]=="d"? "d": "r"?>" />
@@ -190,10 +192,4 @@ endif;?>
 
 
 
-<!--        <select class="input-select">-->
-<!--            <option value="0">Каталог</option>-->
-<!--            <option value="1">Category 01</option>-->
-<!--            <option value="1">Category 02</option>-->
-<!--        </select>-->
-<!--        <input class="input" placeholder="Что ищите?">-->
-<!--        <button class="search-btn">Поиск</button>-->
+

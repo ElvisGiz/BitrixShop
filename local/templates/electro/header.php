@@ -157,6 +157,7 @@ use Bitrix\Main\Page\Asset;
 										<span>Your Cart</span>
 										<div class="qty">3</div>
 									</a>
+<!--                                    выпадашка-->
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<div class="product-widget">
@@ -190,6 +191,7 @@ use Bitrix\Main\Page\Asset;
 											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
+<!--                                    /выпадашка-->
 								</div>
 								<!-- /Cart -->
 
